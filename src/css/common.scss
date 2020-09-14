@@ -1,0 +1,19 @@
+$rem_grid: 20 !default;
+@function rem($val){
+    $rem : $val / $rem_grid;
+    @if $rem == 0 {
+        @return #{$rem} ;
+    }@else{
+        @return $rem / ($rem * 0 + 1) * 1rem; // 带不带px单位都支持
+    }
+}
+
+html {
+    font-size: 20px;
+    font-size: 5.33333vw;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
